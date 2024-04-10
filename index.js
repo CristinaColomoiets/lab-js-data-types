@@ -1,18 +1,15 @@
 /*******************************************
     Iteration 1.1 | Tongue Twister
 *******************************************/
+
 const s1 = "Fred";
 const s2 = "fed";
 const s3 = "Ted";
 const s4 = "bread";
 const s5 = "and";
 
-// Concatenate the string variables into one new string
-
-
-// Print out the concatenated string
-
-
+let tongueTwister = `${s1} ${s2} ${s3} ${s4} ${s5} ${s3} ${s2} ${s1} ${s4}`;
+console.log(`Tragualenguas: ${tongueTwister}`);
 
 
 /*******************************************
@@ -22,10 +19,16 @@ const part1 = "java";
 const part2 = "script";
 
 // Convert the last letter of part1 and part2 to uppercase and concatenate the strings
-
-
-// Print the cameLtaiL-formatted string
-
+function changeLastLetter(palabra, indice){
+    let lastLetter = palabra.substring(indice);
+    let bigLetter = lastLetter.toUpperCase();
+    let wordChanged = palabra.slice(0, indice) + bigLetter;
+    return wordChanged;
+}
+let javaWordChanged = changeLastLetter(part1, 3);
+let scriptWordChanged = changeLastLetter(part2, 5);
+let partsDone = javaWordChanged + scriptWordChanged;
+console.log(`Palabra completa y cambiada: ${partsDone}`);
 
 
 
@@ -34,10 +37,14 @@ const part2 = "script";
 *******************************************/
 const billTotal = 84;
 
-// Calculate the tip (15% of the bill total)
 
 
-// Print out the tipAmount
+function calculateTip(bill){
+    let result = bill - 0.15;
+    return result;
+}
+let result = calculateTip(billTotal);
+console.log(`El porciento del bill total es: ${result}`);
 
 
 
@@ -47,9 +54,14 @@ const billTotal = 84;
 *******************************************/
 
 // Generate a random integer between 1 and 10 (inclusive)
+function generateNumber(){
+    let numberRandom = Math.random(0, 1) * 10 + 1;
+    let numberRounded = Math.trunc(numberRandom);
+    return numberRounded;
+}
+let numRandom = generateNumber();
+console.log(`Número random es: ${numRandom}`);
 
-
-// Print the generated random number
 
 
 
@@ -61,16 +73,16 @@ const a = true;
 const b = false;
 
 // Try and guess the output of the below expressions first and write your answers down:
-const expression1 = a && b;
+const expression1 = a && b;    // true
 
-const expression2 = a || b;
+const expression2 = a || b;    // true
 
-const expression3 = !a && b;
+const expression3 = !a && b;   // false
 
-const expression4 = !(a && b);
+const expression4 = !(a && b); // false
 
-const expression5 = !a || !b;
+const expression5 = !a || !b;  // true
 
-const expression6 = !(a || b);
+const expression6 = !(a || b); // false
 
-const expression7 = a && a;
+const expression7 = a && a;    // true
